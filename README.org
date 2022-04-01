@@ -1,4 +1,4 @@
-* Fall 2021 - Lab Cipher
+* Spring 2022 - Lab 06
 
 * Last name:
 
@@ -13,27 +13,54 @@
 * General instructions:
 - Fill in your name and GitHub username on top.
 - Use the Notes section to add any notes to the instructor.
-- The part 1 (original) lab description can be found here:
+- The main lab description can be found here:
   https://maryash.github.io/135/labs/lab_06.html 
 
-* Specific instructions 
 
-Add a new function using the signature ~std::string
-solve(std::string encrypted_string)~ that will use the techniques we discussed in class
-to decode the parameter ~encrypted_string~. That string will be text
-that has been encoded using the Caesar cipher you already wrote. 
+* Specific instructions for lab 05
 
-The ~solve~ function should:
-1. For each of the 26 rotations of encrypted string: 
-   1. Make a 26 space vector with the frequencies of all the letters
-      based on *encrypted_string*. Note that entries will be 0 for
-      letters that don't appear in the input string.
-    2. Calculate the distance between this vector and the vector of
-       letter frequencies for English.
-The rotation with the smallest distance should be the solution.
+This lab requires that you implement doctest based tests. There is
+already a skeleton ~Makefile~ with targets for ~main~ and ~tests~ as
+well as skeleton ~.c~ ~.h~ and ~doctest.h~ files. 
 
-You can add additional functions and place all functionality in files
-that make sense (and/or add new ones). 
+** Task A
 
-You should use doctest based tests to show that this works.
+For Task A, create a file test-ascii.cpp as specified in the main
+lab. There should be a target in your Makefile *test-ascii* which will
+build test-ascii.cpp into an executable named *test-ascii*. This file should have its own main and you should not use doctest to test it.
+
+** Tasks B - D
+
+***  Task B
+
+Write the functions required for task B in a files named *caesar.cpp*
+and *caeser.h*. You will have to change the Makefile accordingly. Also
+note that this repository starts with funcs.cpp/funcs.h. You won't be
+using those files but can use them and the Makefile as a starting
+point.
+
+Make sure to put sufficient doctest tests for the two functions in tests.cpp. 
+
+For reference, the doctest package and documentation can be found
+[[https://github.com/onqtam/doctest][here]].
+
+
+
+*Note:* Remember that your program (including tests) should not ask
+ for any keyboard input. When run it should clearly show that all
+ tasks are implemented and work.
+
+
+*** Task C
+
+Write the functions for Task C in files named *vigenere.cpp* and
+*vigenere.h*. Once again, modify the other files as necessary and
+write sufficient tests in *tests.cpp*.
+
+*** Task D
+
+Write the functions for Task D in files named *decrypt.cpp* and
+*decrypt.h* Once again, modify the other files as necessary and
+write sufficient tests in *tests.cpp*.
+
 
